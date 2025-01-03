@@ -29,4 +29,3 @@ class File:
         if not self.exists():
             raise ConfigError(f"The config file {self.path} does not exist")
         return self
-

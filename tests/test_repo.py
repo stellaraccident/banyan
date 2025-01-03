@@ -26,6 +26,7 @@ def test_depot_config_error(empty_git_repo: GitRepo):
     with pytest.raises(ConfigError, match="Cannot parse config file"):
         br = BanyanRepo(gr)
 
+
 def test_depot_config(empty_git_repo: GitRepo):
     gr = empty_git_repo
     f = gr.file("BANYAN_DEPOT.toml")
