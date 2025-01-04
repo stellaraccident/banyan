@@ -42,6 +42,11 @@ class CommandExecutor:
         self._log_command(args, quiet=quiet)
         subprocess.check_call(args, cwd=self.cwd, env=self.env)
 
+    def capture_bytes(self, args: list[Path | str], *, quiet: bool = False) -> bytes:
+        args = _normalize_args(args)
+        self._log_command(args, quiet=quiet)
+        return subprocess.check_output(args, cwd=self.cwd, env=self.env)
+
     def _log_command(self, args: list[str], *, quiet: bool = False):
         if quiet:
             return

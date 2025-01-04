@@ -1,2 +1,6 @@
 class ConfigError(Exception):
     ...
+
+
+class CommandError(Exception):
+    ...
